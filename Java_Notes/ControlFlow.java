@@ -6,7 +6,9 @@ public class ControlFlow {
         int visaCard=100;
         int burgerCost=45;
         int currentCard;
-        if(visaCard>=burgerCost){
+        String user1="ME";
+        String user2="Myself";
+        /*if(visaCard>=burgerCost){
             System.out.println("Congrats on your purchase!");//shorthand is 'sout'
             currentCard=visaCard-burgerCost;
             System.out.println("Remaining funds: "+currentCard);
@@ -15,6 +17,12 @@ public class ControlFlow {
         int lowCard=10;
         if(lowCard>=burgerCost){
             System.out.println("You don't have enough funds.");
+        }*/
+
+        if(user1.equals("ME") && user2.equals("Myself")){//&& is boolean for AND
+            System.out.println("Make up your mind.");
+        }else{
+            System.out.println("I see you've got things in order.");
         }
     }
 }
