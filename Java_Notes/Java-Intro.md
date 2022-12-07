@@ -19,3 +19,8 @@ A Java Runtime Environment (JRE) is provided with the JDK when you download it. 
 The JVM is the tool that takes the byte code (.class files) and turns it into data that is understandable by your particular operating system. KEep in mind, all JVMs are found in their respective JRE.
 
 JVM within a JRE within a JDK
+
+## Classes & Objects
+Java is an Object Oriented Programming language: this means everything is tied to classes and objects.
+Classes are like blueprints: they contain the information needed for your code to work.
+Objects are the implementation of the blueprints.
