@@ -24,3 +24,10 @@ JVM within a JRE within a JDK
 Java is an Object Oriented Programming language: this means everything is tied to classes and objects.
 Classes are like blueprints: they contain the information needed for your code to work.
 Objects are the implementation of the blueprints.
+
+## Interfaces
+If Classes are blueprints for objects, Interfaces are more like contract agreements for Classes. If a Class "implements" an interface it is like an agreement that the class will implement the features of the interface.
+This can be used in tandem with Inheritence, of which a class may only use once, whereas multiple interfaces may be used.
+
+## When to use Abstract vs Interface
+If the only thing that needs to be shared is methods then use an interface: if you also need to share fields(variables associated with objects) use an Abstract class.
