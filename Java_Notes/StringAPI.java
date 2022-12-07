@@ -22,7 +22,6 @@ public class StringAPI {
         System.out.println(myWord);
         //StringBuilder doenst have a built in split method, but it's an easy conversion
         myWord.toString().split(" ");//converts the StringBuilder into a new string and then acts upon it
-
         //HOW DO WE HANDLE THE OUTPUT OF THIS ^
 
         //a coding challenge might be to "find the numbers and add them together"
