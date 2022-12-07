@@ -27,7 +27,7 @@ public class Car {
        System.out.println(mattCar.gas);
        System.out.println(myCar.gas);//didnt instantiate any gas, so by default it starts at 0
 
-       Car.checkCount();
+       checkCount();//this still works without it being Car.checkCount()
     }
     //public: access modifier, can be accessed by any object anywhere in the code
     //void: return type, method will return nothing
