@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+//We have to import these two because their information is not found in the package(folder for .java files) our current file is located in.
 
 public class MoreDataStructures {
     /*Two interfaces to be familiar with are the List and Set interfaces. These two give you access to some of the more common data
