@@ -1,3 +1,4 @@
+package Inheritance;
 public class Animal {
     public int limbs;
     public String name;

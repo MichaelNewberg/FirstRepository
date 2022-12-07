@@ -1,3 +1,4 @@
+package Abstraction;
 public class Kitchen {//can access everything since it's in the same JAVA_NOTES folder
     public static void main(String[] args) {
         Taco myTaco=new Taco();//Reference as a TYPE the abstract class(Food) and specify what type(Taco)

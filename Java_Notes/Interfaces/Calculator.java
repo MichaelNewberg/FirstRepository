@@ -1,3 +1,4 @@
+package Interfaces;
 public class Calculator implements Maths {
     public int[] convertFloat(float numOne, float numTwo){//method to do the conversion and put into an array, more coding than just calling the .round func
         int[] nums=new int[2];

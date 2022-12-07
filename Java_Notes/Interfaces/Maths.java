@@ -1,3 +1,4 @@
+package Interfaces;
 public interface Maths {
     /*All interfaces will share some common characteristics:
         All fields in an interface are considered by default to be public static final
