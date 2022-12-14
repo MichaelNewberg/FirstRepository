@@ -1,3 +1,4 @@
+package Basics;
 public class TheBaseClass {
     /*In Java, ALL classes inherit from the base Object class. This is how we get access to things like constructors and helpful methods like
        the toString() method.

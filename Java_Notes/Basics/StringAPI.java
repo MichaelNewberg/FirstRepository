@@ -1,3 +1,4 @@
+package Basics;
 public class StringAPI {
     /*Strings are the simplest object we can use to represent words/phrases within our code. They are useful when we need to do things like pass
         messages to our users, create error messages for developers, etc.

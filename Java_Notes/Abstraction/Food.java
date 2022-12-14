@@ -1,4 +1,4 @@
-package Abstraction;
+package Java_Notes.Abstraction;
 public abstract class Food {
     //Abstract classes can't have objects created: you must have a sub-class inherit the properties of the abstract to create an object
     //in order to acess the properties of the abstract class.

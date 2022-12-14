@@ -1,3 +1,4 @@
+package Basics;
 public class DataTypes {
     /*Java represents the most basic of data in structures called primitives: these data types are the simplest
     ones you can work with in Java, and we will be making extensive use of them while we look at other aspects of Java*/

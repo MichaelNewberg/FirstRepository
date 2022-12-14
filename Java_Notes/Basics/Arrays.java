@@ -1,3 +1,4 @@
+package Basics;
 public class Arrays {
     //Arrays are structures used to hold data. Immutable(unchangable) structures once created.
     public static void main(String[] args) {

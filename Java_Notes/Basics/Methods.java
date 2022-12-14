@@ -1,3 +1,4 @@
+package Basics;
 public class Methods {
     /*Methods are reusable code that is attached to a class or interface. They are useful when you need to repeatedly execute some code
     but don't exactly know when the code will need to be executed. Instead of having to rewrite your code, just call the method you create.
