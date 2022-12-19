@@ -8,7 +8,7 @@ public interface Maths {
     Methods in interfaces also have some default settings:
         They are considered by default to be public and abstract.
      */
-    //setting return type to void because wer are going to print the result to the console.
+    //setting return type to void because we are going to print the result to the console.
     void add(float numOne, float numTwo);//Don't need to add public or abstract to the method
     void subtract(float numOne, float numTwo);
     void multiply(float numOne, float numTwo);
