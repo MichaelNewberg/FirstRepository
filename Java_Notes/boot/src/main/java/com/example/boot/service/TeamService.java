@@ -50,4 +50,9 @@ public class TeamService {
             return "Oops, something went wrong.";
         }
     }
+
+    public String deleteTeam(int id){
+        this.teamDao.deleteById(id);
+        return "Deleted team with id of: "+ id;
+    }
 }

@@ -3,8 +3,10 @@ package com.example.boot.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,5 +66,17 @@ public class TeamController {
         }else{
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
         }
+    }
+
+    @DeleteMapping("/team/{id}")
+    public ResponseEntity<String> deleteTeamById(@PathVariable int id){
+        try {
+            String message = this.teamService.deleteTeam(id);
+            return new ResponseEntity<>(message, HttpStatus.OK);
+        } catch (EmptyResultDataAccessException e) {
+            return new ResponseEntity<>("Team with given id not found.", HttpStatus.NOT_FOUND);//to catch error if wrong input
+        }
+        
+        
     }
 }
