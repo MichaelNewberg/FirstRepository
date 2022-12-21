@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.boot.Exceptions.EntityNotFound;
 import com.example.boot.entities.Team;
 import com.example.boot.repository.TeamDao;
 
@@ -19,7 +20,7 @@ public class TeamService {
         if(possibleTeam.isPresent()){   //isPresent returns true if the object we want was returned in Optional
             return possibleTeam.get();  //get() returns the ojbect we want if it is present
         }else{
-            return new Team();  //return empty team to indicate there was no data
+            throw new EntityNotFound("Team not found.");
         }
     }
 
@@ -28,17 +29,21 @@ public class TeamService {
         if(possibleteam.isPresent()){
             return possibleteam.get();
         }else{
-            return new Team();
+            throw new EntityNotFound("Team not found.");
         }
     }
 
     public List<Team> getAllTeams(){
-        return this.teamDao.findAll();//findAll already defined, getting from JPA
+        List<Team> teams = this.teamDao.findAll();//findAll already defined, getting from JPA
+        if (teams.size() != 0) {
+            return teams;
+        } else {
+            throw new EntityNotFound("No teams were found.");
+        }
     }
 
     public String createTeam(Team team){
         this.teamDao.createTeam(team.getTeamName());
-        //team.setTeamID(newId);
         return "Team created successfully";
     }
 
