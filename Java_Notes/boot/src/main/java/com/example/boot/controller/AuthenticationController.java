@@ -1,0 +1,20 @@
+package com.example.boot.controller;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AuthenticationController {
+    @PostMapping("/login")
+    public String login(HttpSession session){
+        session.setAttribute("user", "Some username");
+        return "Logged in successfully!";
+    }
+    @PostMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "Logged out successfully.";
+    }
+}

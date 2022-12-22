@@ -1,0 +1,41 @@
+<configuration> 
+    <!--Appenders are how you tell Logback where you want to send the logs-->
+    <appender name="STOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!--Encoders are how you tell Logback how to format the logs-->
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+    <!--Root tells Logback what your default log settings should be-->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <!-- specify where we want the files saved -->
+        <file>logs/staticLogs.log</file>
+        <!-- append set to true so we dont make a new file -->
+        <append>true</append>
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/rollingFile.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Sets pattern for how to creat new log files -->
+            <fileNamePattern>logs/rollingLogFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- How many DAYS worth of logs we want in the file -->
+            <maxHistory>7</maxHistory>
+            <!-- Setting a cap for file size: Can trigger rollover before maxHistory -->
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!--<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>-->
+            <includeMdcKeyName>METHOD</includeMdcKeyName>
+            <includeMdcKeyName>URI</includeMdcKeyName>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

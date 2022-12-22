@@ -12,7 +12,7 @@ public class Player {
     @Column(name="player_id")
     private int playerId;
     @Column(name="player_name")
-    private String playername;
+    private String playerName;
     @Column(name="player_team_id")
     private int playerTeamId;
     public int getPlayerId() {
@@ -21,11 +21,11 @@ public class Player {
     public void setPlayerId(int playerId) {
         this.playerId = playerId;
     }
-    public String getPlayername() {
-        return playername;
+    public String getPlayerName() {
+        return playerName;
     }
-    public void setPlayername(String playername) {
-        this.playername = playername;
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
     public int getPlayerTeamId() {
         return playerTeamId;
@@ -35,6 +35,6 @@ public class Player {
     }
     @Override
     public String toString() {//just overriding the default toString() in case we wish to call it
-        return "Player [playerId=" + playerId + ", playername=" + playername + ", playerTeamId=" + playerTeamId + "]";
+        return "Player [playerId=" + playerId + ", playerName=" + playerName + ", playerTeamId=" + playerTeamId + "]";
     }
 }
