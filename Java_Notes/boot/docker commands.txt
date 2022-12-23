@@ -1,0 +1,8 @@
+docker run -d -p 8080:8080 "container name"     Run in detatched view (console available)
+docker stop "container"
+docker-compose up                               Deploys container
+docker-compose down                             Removes container (not images)
+docker image rm "name"                          removes image
+docker ps                                       whos info on running programs
+docker image ls                                 shows image repository
+docker container ls                             shows container repository
