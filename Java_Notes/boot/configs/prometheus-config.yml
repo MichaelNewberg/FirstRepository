@@ -6,7 +6,7 @@ scrape_configs:
     static_configs:
       - targets: 
         - prometheus:9090
-  - job_name: sports # adds the "sports" label to all metrics provided by this scrape config
+  - job_name: sports # adds the "sports" label to all metrics provided by this scrape config CALL IT PLANETARIUM FOR P1
     metrics_path: /actuator/prometheus # this endpoint is added by micrometer dependency in app
     static_configs:
       - targets:

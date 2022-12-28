@@ -99,4 +99,9 @@ public class PlayerController {
     //     }
     // }
     }
+    @GetMapping("/uhoh")
+    public ResponseEntity<String> returnFiveHundred(){
+        return new ResponseEntity<>("Returning 500 status code.", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    
 }

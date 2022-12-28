@@ -27,7 +27,7 @@ services:
     command: "--config.file=/etc/promtail/promtail-config.yml"
 
   grafana:
-    image: grafana/grafana:latest # username/password:
+    image: grafana/grafana:latest # username/password: default is admin/admin
     container_name: logging-grafana
     # volumes:
     #   - grafana-data:/var/lib/grafana
