@@ -12,8 +12,10 @@
         <file>logs/staticLogs.log</file>
         <!-- append set to true so we dont make a new file -->
         <append>true</append>
-        <encoder>
-            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!--<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>-->
+            <includeMdcKeyName>METHOD</includeMdcKeyName>
+            <includeMdcKeyName>URI</includeMdcKeyName>
         </encoder>
     </appender>
 

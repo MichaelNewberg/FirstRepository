@@ -6,3 +6,4 @@ docker image rm "name"                          removes image
 docker ps                                       whos info on running programs
 docker image ls                                 shows image repository
 docker container ls                             shows container repository
+docker stop $(docker container ls -q)           stops all RUNNING containers
