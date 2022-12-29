@@ -8,3 +8,6 @@ docker ps                                       whos info on running programs
 docker image ls                                 shows image repository
 docker container ls                             shows container repository
 docker stop $(docker container ls -q)           stops all RUNNING containers
+docker build -t imagename dockerfilepath        creates image from dockerfile
+docker tag imagename repositoryname:tag         stages image to repository for later push
+docker push repositoryname:tag                  pushes staged items to repository
