@@ -53,11 +53,11 @@ In an Imperative System:
 - you are telling Kubernetes exactly what to do in an imperative system.
     - Kubernetes will respond to your kubectl commands.
 - you will typically only use imperative commands when debugging/handling an incident
-    - upon finishing your work you should undo your imperative changes to allow the system to manage its own intended/current state
+    - upon finishing your work you should undo your imperative changes to allow the system to manage its own desired/current state
 
 In a Declarative System:
 - commands equal end statements
     - updating a deployment from an old image to a new one can be done declaratively by updating a config file and then applying it to the cluster.
-- in Kubernetes the declarative system creates the "intended state" of the cluster.
-    - you use config files to indicate the intended state for the app, and once Kubernetes reads these files it updates itself accordingly to change (if needed) its current state to match the intended state.
-- this is the default way Kubernetes is intended to be used: use configs to tell Kubernetes what the intended state should be
+- in Kubernetes the declarative system creates the "desired state" of the cluster.
+    - you use config files to indicate the desired state for the app, and once Kubernetes reads these files it updates itself accordingly to change (if needed) its current state to match the desired state.
+- this is the default way Kubernetes is desired to be used: use configs to tell Kubernetes what the desired state should be
