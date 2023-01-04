@@ -61,3 +61,33 @@ In a Declarative System:
 - in Kubernetes the declarative system creates the "desired state" of the cluster.
     - you use config files to indicate the desired state for the app, and once Kubernetes reads these files it updates itself accordingly to change (if needed) its current state to match the desired state.
 - this is the default way Kubernetes is desired to be used: use configs to tell Kubernetes what the desired state should be
+
+
+# Kubernetes: The Pod
+Pods are the computational objects that host your containerized applications and have meta data that allows them to be interacted with. There are some key points to a pod:
+- container
+    - one or more containers hosted by the pod, Kubernetes uses pods to host them
+    - typically only host 1 container per pod, but can support more than 1
+- meta data
+    - includes data that allows you and kubernetes to interact with the pod and containers inside of the pod
+        - name: this is how you reference the pod with kubectl commands
+            - kubectl logs {pod name}
+            - kubectl describe pod {pod name}
+        - lables: this is how kubernetes knows to link your pod and other objects to each other
+            - can target your pods with services by matching labels: a service targeting pods with the label app:my-app will only send traffic to pods with that label
+
+
+# Kubernetes: Basic Services
+There are 3 basic services you will see in Kubernetes deployments:
+- ClusterIp
+    - this service is used when you want to target one or more pods within the cluster via internal services
+    - this service does not have a public facing ip address
+    - ClusterIps do support limited horizontal load balancing: they will cycle through which instance of your applications recieve traffic (assuming you have multiple instances of your application deployed)
+- Nodeport
+    - this service allows you to map a port in your container (typically the exposed port for the app) to a port on the node that is hosting the pod your container is running in
+    - this kind of service can be extremely limited: if your nodes do not have assigned public IP addresses then you can't use a Nodeport service
+    - Nodeports do not support horizontal load balancing, unlike ClusterIps: one pod/container can be mapped to a nodeport at a time
+- Loadbalancer
+    - this service spins up an external resource (a load balancer) and is the most common tool used for handling external traffic to clusters
+    - can be mapped directly to a pod, but is more common to set up "ingress" rules that better direct traffic to the appropriate resources
+    - also help keep your applications from being overloaded by requests: they can limit the amount of resources being handled at a time

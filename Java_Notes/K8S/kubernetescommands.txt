@@ -1,0 +1,7 @@
+kubectl apply -f ymlfilename            creates pod
+kubectl get pods                        shows pods
+kubectl get nodes                       shows nodes
+kubectl get services                    lists created services
+kubectl describe pod podname            shows detailed info about pod
+kubectl describe service servicename    shows detailed info about service
+kubectl logs podname                    shows logs associated with pod
