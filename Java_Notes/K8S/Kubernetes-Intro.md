@@ -91,3 +91,11 @@ There are 3 basic services you will see in Kubernetes deployments:
     - this service spins up an external resource (a load balancer) and is the most common tool used for handling external traffic to clusters
     - can be mapped directly to a pod, but is more common to set up "ingress" rules that better direct traffic to the appropriate resources
     - also help keep your applications from being overloaded by requests: they can limit the amount of resources being handled at a time
+
+
+# Kubernetes: deployments
+It is not normal to use Kubernetes to handle deploying a single instance of an app: it was built to handle large scale enterprise apps: multiple instances of whatever app provides the service, auxilary software for the monitoring/maintanence, the whole works. An easy way to handle multiple pods in a single location is to use a deployment manifest. You define the specs of the pod normally within a deployment manifest, but you are also able to control things like replica sets (how many pods do you want), environment variables, volumes and more.
+
+
+# Kubernetes: Loadbalancer Limitations
+You can have multiple pods with the same label, and when your service that is a loadbalancer targets those pods you will see in the service info that the service can target multiple pods. However, loadbalancers have a limitation: they are unable to disperse the incoming http requests to the multiple pods. Instead, one pod will be chosen and your requests will be sent to that one consistently. In order to make use of your extra pods and to better balance the load of incoming requests you will need to make use of Ingress rules and an Ingress controller.
